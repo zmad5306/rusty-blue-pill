@@ -8,6 +8,7 @@ cortex-m = "0.7"
 cortex-m-rt = { version = "0.7" }
 panic-halt = "0.2"
 stm32f1xx-hal = { version = "0.9", features = ["stm32f103", "rt"] }
+rtt-target = { version = "0.3", features = ["cortex-m"] }
 
 [profile.release]
 codegen-units = 1

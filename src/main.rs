@@ -4,9 +4,16 @@
 use cortex_m_rt::entry;
 use stm32f1xx_hal::{pac, prelude::*, timer::Timer};
 use panic_halt as _; // Panic handler
+use rtt_target::{rprintln, rtt_init_print};
 
 #[entry]
 fn main() -> ! {
+    // Initialize RTT for debugging
+    rtt_init_print!();
+
+    // Print an RTT debug message
+    rprintln!("Starting Blinky on Blue Pill");
+    
     // Get access to the core peripherals from the cortex-m crate
     let cp = cortex_m::Peripherals::take().unwrap();
     let dp = pac::Peripherals::take().unwrap();
